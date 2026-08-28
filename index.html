@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Bread & Sonion Cinema - Free Movies</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <!-- ====== NAVIGATION ====== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍿</span>
+                <span class="logo-text">Bread<span class="highlight">&</span>Sonion</span>
+            </div>
+            <div class="nav-actions">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search for movies..." aria-label="Search movies">
+                    <button id="searchBtn" aria-label="Search">🔍</button>
+                </div>
+                <button id="homeBtn" class="nav-btn" aria-label="Home">🏠</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main id="mainContent">
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading movies...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;">
+            <span class="error-icon">⚠️</span>
+            <p id="errorText">Something went wrong.</p>
+            <button onclick="loadTrending()">Retry</button>
+        </div>
+
+        <!-- Movie Grid -->
+        <section id="movieGrid" class="movie-grid">
+            <!-- Movies will be dynamically injected here -->
+        </section>
+    </main>
+
+    <!-- ====== MOVIE DETAIL MODAL ====== -->
+    <div id="detailModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeDetail()">✕</button>
+            <div id="detailContent">
+                <!-- Dynamic content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== VIDEO PLAYER MODAL ====== -->
+    <div id="playerModal" class="modal" style="display: none;">
+        <div class="modal-content player-modal-content">
+            <button class="modal-close" onclick="closePlayer()">✕</button>
+            <div id="playerContainer">
+                <video id="videoPlayer" controls autoplay style="width: 100%; max-height: 80vh; background: #000;">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== SCRIPTS ====== -->
+    <script src="script.js"></script>
+</body>
+</html>
